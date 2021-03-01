@@ -5,4 +5,4 @@ increase exponentialy.
 Task2. O(n) each input has to go through a for loop once so as input increases, number of lines executed will grow linearly.  
 Task3. O(n) eventhough there are two for loops, the second loop is  a filterd version of the input, so time complexity is
 heavily dependant on the first loop.
-Task3. O(n^4) each input has to go through four for loops, the execution time will increase quadrupley.
+Task4. O(n^4) each input has to go through four for loops, the execution time will increase quadrupley.
