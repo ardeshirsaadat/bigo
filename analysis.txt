@@ -1,8 +1,32 @@
-Taks0. The worst case scenario for this case is constanst O(1), It does not matter how big our input is, the first or 
-the last is always required so number of lines executed is always the same.
-Task1. O(n^2) each input goes through two for loops so as the number of input increases the the number of lines executed,
-increase exponentialy.
-Task2. O(n) each input has to go through a for loop once so as input increases, number of lines executed will grow linearly.  
-Task3. O(n) eventhough there are two for loops, the second loop is  a filterd version of the input, so time complexity is
-heavily dependant on the first loop.
-Task4. O(n^4) each input has to go through four for loops, the execution time will increase quadrupley.
+Task 0
+  .Worst case complexity:O(1)
+  .Algorithm:
+    .find first element:O(1)
+    .find last element:O(1)
+
+Task 1
+  .Worst case complexity:O(n^2)
+  .Algorithm:
+    .initialize set:O(1)
+    .extract_numbers:O(n^2)
+
+Task 2
+  .Worst case complexity:O(n)
+  .Algorithm:
+    .each if is O(1)
+    .max funtion:O(n)
+    .for loop:O(n)
+
+Task 3
+  .Worst case complexity:O(n)
+  .Algorithm:
+    .check_number_origin:O(1)
+    .extract_area_code:each if is O(n)
+    .for loop:O(n)
+    .sorted function:O(nlogn)
+
+Task 4
+  .Worst case complexity:O(n)
+  .Algorithm:
+    .each delisting to a set:O(n)
+    . set operations:O(1)  

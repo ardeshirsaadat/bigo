@@ -19,15 +19,17 @@ Print a message:
 "<telephone number> spent the longest time, <total time> seconds, on the phone during 
 September 2016.".
 """
-user_info_dict = {}
-max_duration = 0
-for call_info in calls:
-    # print(call_info[3])
-    if int(call_info[3]) > max_duration:
-        user_info_dict['calling_tel'] = call_info[0]
-        user_info_dict['answering_tel'] = call_info[1]
-        user_info_dict['date'] = call_info[2]
-        user_info_dict['duration'] = int(call_info[3])
-        max_duration = user_info_dict['duration']
+cummulative_call_duration_per_number = {}
+for call in calls:
+    if call[0] not in cummulative_call_duration_per_number.keys():
+        cummulative_call_duration_per_number[call[0]] = int(call[3])
+    if call[1] not in cummulative_call_duration_per_number.keys():
+        cummulative_call_duration_per_number[call[1]] = int(call[3])
+    if call[0] in cummulative_call_duration_per_number.keys():
+        cummulative_call_duration_per_number[call[0]] += int(call[3])
+    if call[1] in cummulative_call_duration_per_number.keys():
+        cummulative_call_duration_per_number[call[1]] += int(call[3])
+max_commulative_duration_number = max(
+    cummulative_call_duration_per_number, key=cummulative_call_duration_per_number.get)
 print("{} spent the longest time, {} seconds, on the phone during September 2016.".format(
-    user_info_dict['answering_tel'], user_info_dict['duration']))
+    max_commulative_duration_number, cummulative_call_duration_per_number[max_commulative_duration_number]))

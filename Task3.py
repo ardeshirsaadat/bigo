@@ -73,7 +73,7 @@ for call in calls:
             list_unrepeated_areacodes.append(areacode)
 
 print("The numbers called by people in Bangalore have codes:")
-for code in list_unrepeated_areacodes:
+for code in sorted(list_unrepeated_areacodes):
     print(code)
 percent = round((list_repeated_areacodes.count('080')/count)*100, 2)
 print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(percent))

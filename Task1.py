@@ -21,13 +21,10 @@ Print a message:
 
 
 def count_unrepeated_numbers(list_of_numbers):
-    dict_count = {}
+    set_count = set()
     for number in list_of_numbers:
-        if number not in dict_count:
-            dict_count[number] = 1
-        else:
-            dict_count[number] += 1
-    return len(dict_count.keys())
+        set_count.add(number)
+    return len(set_count)
 
 
 def extract_numbers(list):
